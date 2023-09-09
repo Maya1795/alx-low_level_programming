@@ -11,7 +11,7 @@
 int main(void)
 {
 	int d = 0;
-	int d1, d2;
+	int d2, d3;
 
 	while (d <= 9)
 	{
