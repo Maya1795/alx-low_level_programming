@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - entry
+ * print_alphabet_x10 - finction that will peint the alphabet
  *
  */
 
