@@ -32,14 +32,13 @@ int numlength(int num)
 int main(void)
 {
 	int c, i;
-	unsigned long f1 = 1, f2 = 2, sum, 
-		      mix = 100000000, f1o = 0, f2o = 0, sumo = 0;
+	unsigned long f1 = 1, f2 = 2, sum, mix = 100000000, f1o = 0, f2o = 0, sumo = 0;
 
 	for (c = 0; c <= 98; c++)
 	{
 		if (f1o > 0)
 			printf("%lu", f1o);
-		i = numlenght(mix) - 1 - numlenght(f1);
+		i = numlength(mix) - 1 - numlength(f1);
 
 		while (f1o > 0 && i > 0)
 		{
