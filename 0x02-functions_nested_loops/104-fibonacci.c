@@ -10,16 +10,16 @@
  */
 int numlength(int num)
 {
-	int l = 0;
+	int length = 0;
 
 	if (!num)
 		return (1);
 	while (num)
 	{
 		num = num / 10;
-		l += 1;
+		length += 1;
 	}
-	return (l);
+	return (length);
 }
 
 /**
@@ -34,7 +34,7 @@ int main(void)
 	int c, i;
 	unsigned long f1 = 1, f2 = 2, sum, mx = 100000000, f1o = 0, f2o = 0, sumo = 0;
 
-	for (c = 0; c <= 98; c++)
+	for (c = 1; c <= 98; c++)
 	{
 		if (f1o > 0)
 			printf("%lu", f1o);
