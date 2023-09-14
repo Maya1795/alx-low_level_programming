@@ -32,13 +32,13 @@ int numlength(int num)
 int main(void)
 {
 	int c, i;
-	unsigned long f1 = 1, f2 = 2, sum, mix = 100000000, f1o = 0, f2o = 0, sumo = 0;
+	unsigned long f1 = 1, f2 = 2, sum, mx = 100000000, f1o = 0, f2o = 0, sumo = 0;
 
 	for (c = 0; c <= 98; c++)
 	{
 		if (f1o > 0)
 			printf("%lu", f1o);
-		i = numlength(mix) - 1 - numlength(f1);
+		i = numlength(mx) - 1 - numlength(f1);
 
 		while (f1o > 0 && i > 0)
 		{
@@ -47,8 +47,8 @@ int main(void)
 		}
 		printf("%lu", f1);
 
-		sum = (f1 + f2) % mix;
-		sumo = f1o + f2o + (f1 + f2) / mix;
+		sum = (f1 + f2) % mx;
+		sumo = f1o + f2o + (f1 + f2) / mx;
 		f1 = f2;
 		f1o = f2o;
 		f2 = sum;
