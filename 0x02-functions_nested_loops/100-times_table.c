@@ -21,7 +21,7 @@ void print_times_table(int n)
 				_putchar(',');
 				_putchar(' ');
 
-				p = n * m;
+				p = num * m;
 
 				if (p <= 9)
 					_putchar(' ');
