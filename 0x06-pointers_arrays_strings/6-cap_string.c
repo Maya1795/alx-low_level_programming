@@ -24,7 +24,7 @@ int isLower(char c)
 int isdelimiter(char c)
 {
 	int i;
-	char d[] = " \t\n,.!?\"(){}";
+	char d[] = " \t\n,;.!?\"(){}";
 
 	for (i = 0; i < 12; i++)
 		if (c == d[i])
@@ -43,7 +43,7 @@ int isdelimiter(char c)
 
 char *cap_string(char *s)
 {
-	int *p = s;
+	char *p = s;
 	int f = 1;
 
 	while (*s)
