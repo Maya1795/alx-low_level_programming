@@ -10,7 +10,7 @@ int in(char *s1, char *s2);
  *
  */
 
-int mp(char *s2)
+char *mp(char *s2)
 {
 	if (*s2 == '*')
 		return (mp(s2 + 1));
@@ -32,7 +32,7 @@ int wildcmp(char *s1, char *s2)
 {
 	int m = 0;
 
-	if (!*s1 && *s2 == '*' && !mp(s2))
+	if (!*s1 && *s2 == '*' && !*mp(s2))
 		return (1);
 	if (*s1 == *s2)
 	{
@@ -46,11 +46,11 @@ int wildcmp(char *s1, char *s2)
 	{
 		s2 = mp(s2);
 		if (!*s2)
-			return (0);
+			return (1);
 		if (*s1 == *s2)
 			m += wildcmp(s1 + 1, s2 + 1);
 		m += in(s1, s2);
-		return (!m);
+		return (!!m);
 	}
 	return (0);
 }
