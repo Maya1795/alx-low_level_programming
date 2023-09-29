@@ -1,5 +1,6 @@
 #include "main.h"
 
+int squ(int n, int m);
 /**
  * _sqrt_recursion - square root
  *
