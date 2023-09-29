@@ -1,6 +1,6 @@
 #include "main.h"
 
-int squ(int n, int m);
+int sq(int n, int m);
 /**
  * _sqrt_recursion - square root
  *
@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * squ - square
+ * sq - square
  *
  * @n: number
  * @m: value
@@ -24,12 +24,12 @@ int _sqrt_recursion(int n)
  * Return: number
  *
  */
-int squ(int n, int m)
+int sq(int n, int m)
 {
 	if (m * m == n)
 		return (m);
 	else if (m * m < n)
-		return (squ(n, m + 1));
+		return (sq(n, m + 1));
 	else
 		return (-1);
 }
