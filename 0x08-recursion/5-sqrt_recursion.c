@@ -15,7 +15,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * sq - square
+ * squ - square
  *
  * @n: number
  * @m: value
@@ -23,12 +23,12 @@ int _sqrt_recursion(int n)
  * Return: number
  *
  */
-int sq(int n, int m)
+int squ(int n, int m)
 {
 	if (m * m == n)
 		return (m);
 	else if (m * m < n)
-		return (sq(n, m + 1));
+		return (squ(n, m + 1));
 	else
 		return (-1);
 }
