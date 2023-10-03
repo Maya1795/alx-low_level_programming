@@ -20,12 +20,8 @@ int main(int argc, char **argv)
 	{
 		for (m = argv[argc]; *m; m++)
 			if (*m < '0' || *m > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-				sum += atoi(argv[argc]);
+				return(printf("Error\n"), 1);
+		sum += atoi(argv[argc]);
 	}
 	printf("%d\n", sum);
 	return (0);
