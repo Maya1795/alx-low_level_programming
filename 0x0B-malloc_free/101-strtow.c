@@ -77,6 +77,5 @@ char **strtow(char *str)
 		else
 			i++;
 	}
-	free(p);
 	return (p);
 }
