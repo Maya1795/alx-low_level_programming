@@ -38,7 +38,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 char *_s(char *m, char a, unsigned int n)
 {
+	char *p = m;
+
 	while (n--)
 		*m++ = a;
-	return (m);
+	return (p);
 }
