@@ -17,10 +17,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *f;
 
 	if (nmemb == 0 || size == 0)
-		return (0);
+		return (NULL);
 	f = malloc(sizeof(int) * nmemb);
 	if (f == 0)
-		return (0);
+		return (NULL);
 	_s(f, 0, sizeof(int) * nmemb);
 	return (f);
 }
