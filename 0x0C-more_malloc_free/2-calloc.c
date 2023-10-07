@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *_s(char *m, char a, unsigned int n);
 /**
  * _calloc - allocate memory of array
  *
@@ -14,33 +13,15 @@ char *_s(char *m, char a, unsigned int n);
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *f;
+	char *f;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	f = malloc(sizeof(int) * nmemb);
+	f = malloc(size * nmemb);
 	if (f == 0)
-		return (NULL);
-	_s(f, 0, sizeof(int) * nmemb);
+		return (0);
+	nmemb *= size;
+	while (nmemb--)
+		f[nmemb] = 0;
 	return (f);
-}
-
-/**
- * _s - fill bytes
- *
- * @m: const
- * @a: char
- * @n: number of max bytes
- *
- * Return: pointer
- *
- */
-
-char *_s(char *m, char a, unsigned int n)
-{
-	char *p = m;
-
-	while (n--)
-		*m++ = a;
-	return (p);
 }
