@@ -77,7 +77,7 @@ char *_bm(char *m1, char *m2)
 				exit(98);
 			}
 			b = m2[l2] - '0';
-			c += f[l1 + l2 + 1] + (i * y);
+			c += f[l1 + l2 + 1] + (a * b);
 			f[l1 + l2 + 1] = c % 10;
 			c /= 10;
 		}
