@@ -3,7 +3,6 @@
 /**
  * f_char - character
  *
- * @s: sting
  * @p: pointer
  *
  */
@@ -16,7 +15,6 @@ void f_char(va_list p)
 /**
  * f_int - int
  *
- * @s: string
  * @p: pointer
  *
  */
@@ -28,7 +26,6 @@ void f_int(va_list p)
 /**
  * f_float - float
  *
- * @s: string
  * @p: pointer
  *
  */
@@ -40,7 +37,6 @@ void f_float(va_list p)
 /**
  * f_string - string
  *
- * @s: string
  * @p: pointer
  *
  */
