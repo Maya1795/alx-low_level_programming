@@ -32,9 +32,10 @@ void print_all(const char * const format, ...)
 					printf("%s%f", s, va_arg(p, double));
 					break;
 				case 's':
+					ptr = va_arg(p, char *);
 					if (ptr == 0)
 						ptr = "(nil)";
-					printf("%s%s", s, va_arg(p, char *));
+					printf("%s%s", s, ptr);
 					break;
 				default:
 					c++;
