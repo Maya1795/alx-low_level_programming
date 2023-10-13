@@ -48,11 +48,8 @@ void f_string(char *s, va_list p)
 {
 	char *ptr = va_arg(p, char *);
 
-	switch ((int)(!ptr))
-	{
-		case 1:
-			ptr = "(nil)";
-	}
+	if (!ptr)
+		ptr = "(nil)";
 	printf("%s%s", s, ptr);
 }
 
@@ -85,7 +82,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == m[j].t[0])
 			{
 				m[j].f(s, p);
-				s = ",";
+				s = ", ";
 			}
 			j++;
 		}
