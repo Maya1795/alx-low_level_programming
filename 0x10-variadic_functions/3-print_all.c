@@ -8,9 +8,9 @@
  *
  */
 
-void f_char(char *s, va_list p)
+void f_char(va_list p)
 {
-	printf("%s%c", s, va_arg(p, int));
+	printf("%c", va_arg(p, int));
 }
 
 /**
@@ -20,9 +20,9 @@ void f_char(char *s, va_list p)
  * @p: pointer
  *
  */
-void f_int(char *s, va_list p)
+void f_int(va_list p)
 {
-	printf("%s%d", s, va_arg(p, int));
+	printf("%d", va_arg(p, int));
 }
 
 /**
@@ -32,9 +32,9 @@ void f_int(char *s, va_list p)
  * @p: pointer
  *
  */
-void f_float(char *s, va_list p)
+void f_float(va_list p)
 {
-	printf("%s%f", s, va_arg(p, double));
+	printf("%f", va_arg(p, double));
 }
 
 /**
@@ -44,13 +44,16 @@ void f_float(char *s, va_list p)
  * @p: pointer
  *
  */
-void f_string(char *s, va_list p)
+void f_string(va_list p)
 {
 	char *ptr = va_arg(p, char *);
 
 	if (!ptr)
-		ptr = "(nil)";
-	printf("%s%s", s, ptr);
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", ptr);
 }
 
 /**
@@ -63,26 +66,27 @@ void f_string(char *s, va_list p)
 void print_all(const char * const format, ...)
 {
 	int i = 0, j;
-	char *s;
+	char *s1 = "", *s2 = ", ";
 	va_list p;
 	t_h m[] = {
-		{"c", f_char},
-		{"i", f_int},
-		{"f", f_float},
-		{"s", f_string},
-		{NULL, NULL}
+		{'c', f_char},
+		{'i', f_int},
+		{'i', f_float},
+		{'s', f_string},
+		{'\0', NULL}
 	};
 
 	va_start(p, format);
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (m[j].t)
+		while (m[j].t != '\0')
 		{
-			if (format[i] == m[j].t[0])
+			if (format[i] == m[j].t)
 			{
-				m[j].f(s, p);
-				s = ", ";
+				printf("%s", s1);
+				m[j].f(p);
+				s1 = s2;
 			}
 			j++;
 		}
