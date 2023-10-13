@@ -67,7 +67,7 @@ void print_all(const char * const format, ...)
 	tok_t m[] = {
 		{'c', f_char},
 		{'i', f_int},
-		{'i', f_float},
+		{'f', f_float},
 		{'s', f_string},
 		{'\0', NULL}
 	};
