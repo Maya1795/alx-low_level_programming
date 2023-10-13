@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j;
 	char *s1 = "", *s2 = ", ";
 	va_list p;
-	t_h m[] = {
+	tok_t m[] = {
 		{'c', f_char},
 		{'i', f_int},
 		{'i', f_float},

@@ -10,11 +10,11 @@
  * @t: pointer
  * @f: function
  */
-typedef struct t
+typedef struct tok
 {
 	char t;
 	void (*f)(va_list);
-} t_h;
+} tok_t;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
