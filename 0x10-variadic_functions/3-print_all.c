@@ -1,49 +1,95 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - print anything
+ * f_char - character
  *
- * @format: count
+ * @s: sting
+ * @p: pointer
  *
- * Return: 0
+ */
+
+void f_char(char *s, va_list p)
+{
+	printf("%s%c", s, va_arg(p, int));
+}
+
+/**
+ * f_int - int
+ *
+ * @s: string
+ * @p: pointer
+ *
+ */
+void f_int(char *s, va_list p)
+{
+	printf("%s%d", s, va_arg(p, int));
+}
+
+/**
+ * f_float - float
+ *
+ * @s: string
+ * @p: pointer
+ *
+ */
+void f_float(char *s, va_list p)
+{
+	printf("%s%f", s, va_arg(p, double));
+}
+
+/**
+ * f_string - string
+ *
+ * @s: string
+ * @p: pointer
+ *
+ */
+void f_string(char *s, va_list p)
+{
+	char *ptr = va_arg(p, char *);
+
+	switch ((int)(!ptr))
+	{
+		case 1:
+			ptr = "(nil)";
+	}
+	printf("%s%s", s, ptr);
+}
+
+/**
+ * print_all - anything
+ *
+ * @format: string
  *
  */
 
 void print_all(const char * const format, ...)
 {
-	int c = 0;
-	char *ptr, *s = "";
+	int i = 0, j;
+	char *s;
 	va_list p;
+	t_h m[] = {
+		{"c", f_char},
+		{"i", f_int},
+		{"f", f_float},
+		{"s", f_string},
+		{NULL, NULL}
+	};
 
 	va_start(p, format);
-	if (format)
+	while (format && format[i])
 	{
-		while (format[c])
+		j = 0;
+		while (m[j].t)
 		{
-			switch (format[c])
+			if (format[i] == m[j].t[0])
 			{
-				case 'c':
-					printf("%s%c ", s, va_arg(p, int));
-					break;
-				case 'i':
-					printf("%s%d ", s, va_arg(p, int));
-					break;
-				case 'f':
-					printf("%s%f ", s, va_arg(p, double));
-					break;
-				case 's':
-					ptr = va_arg(p, char *);
-					if (!ptr)
-						ptr = "(nil)";
-					printf("%s%s ", s, ptr);
-					break;
-				default:
-					c++;
-					continue;
+				m[j].f(s, p);
+				s = ",";
 			}
-			s = ",";
-			c++;
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
 	va_end(p);
