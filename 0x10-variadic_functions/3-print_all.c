@@ -75,7 +75,7 @@ void print_all(const char * const format, ...)
 		{"s", f_string},
 		{NULL, NULL}
 	};
-          lkklk
+
 	va_start(p, format);
 	while (format && format[i])
 	{
