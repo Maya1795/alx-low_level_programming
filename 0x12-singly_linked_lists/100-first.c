@@ -1,15 +1,15 @@
 #include "lists.h"
 
-void _constructor(void) __attribute__ ((constructor));
+void _m(void) __attribute__ ((constructor));
 
 /**
- * constructor - excute string
+ * _m - excute string
  *
  * Return: nothing
  *
  */
 
-void constructor(void)
+void _m(void)
 {
 	printf("You're beat! and yet, you must allow,\n"
 			"I bore my house upon my back!\n");
