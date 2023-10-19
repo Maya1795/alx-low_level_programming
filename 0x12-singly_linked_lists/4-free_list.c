@@ -14,7 +14,7 @@ void free_list(list_t *head)
 	list_t *p, *m;
 
 	if (head == 0)
-		return (0);
+		return;
 	m = head;
 	while (m)
 	{
