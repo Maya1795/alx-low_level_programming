@@ -18,7 +18,7 @@ size_t free_listint_safe(listint_t **h)
 	if (h == NULL || *h == 0)
 		return (0);
 	l = f(*h);
-	for (c = 0; (*h != l || m) && *h != NULL; *h = next)
+	for (c = 0; (*h != l || m) && *h != NULL; *h = p)
 	{
 		c++;
 		p = (*h)->next;
@@ -41,9 +41,9 @@ size_t free_listint_safe(listint_t **h)
 /**
  * f - find loop
  *
- * @h: pointer
+ * @head: pointer
  *
- * Retur: position
+ * Return: position
  *
  */
 listint_t *f(listint_t *head)
