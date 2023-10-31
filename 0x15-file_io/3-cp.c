@@ -1,9 +1,9 @@
 #include "main.h"
 
 #define usage "Usage: cp file_from file_to\n"
-#define read_err "Error: Can't read from file NAME_OF_THE_FILE %s\n"
-#define write_err "Error: Can't write to NAME_OF_THE_FILE %s\n"
-#define close_err "Error: Can't close fd FD_VALUE %d\n"
+#define read_err "Error: Can't read from file %s\n"
+#define write_err "Error: Can't write to %s\n"
+#define close_err "Error: Can't close fd %d\n"
 #define permission (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH | S_IWGRP)
 /**
  * main - main code
