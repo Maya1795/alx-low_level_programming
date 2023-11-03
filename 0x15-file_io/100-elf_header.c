@@ -51,7 +51,7 @@ void class(Elf64_Ehdr r)
 
 void data(Elf64_Ehdr r)
 {
-	printf("  Data:                             ");
+	printf("  Data:                              ");
 	switch (r.e_ident[EI_DATA])
 	{
 		case ELFDATA2MSB:
@@ -169,7 +169,7 @@ void p_o(Elf64_Ehdr r)
 void abvi(Elf64_Ehdr r)
 {
 	printf("  ABI Version:                       %d\n",
-			r.e_ident[EI_VERSION]);
+			r.e_ident[EI_ABIVERSION]);
 }
 /**
  * type - print type
